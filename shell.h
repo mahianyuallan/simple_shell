@@ -16,11 +16,49 @@
 #include <sys/stat.h>
 
 
-#define TOK_BUFER 128
+#define BUFF_TOK 128
 #define DELIN_TOK " \t\r\n\a"
-#define BUFER 1024
+#define BUFF 1024
 
 
+extern char **envir;
+
+
+
+typedef struct list_line_s
+{
+	char *line;
+	struct list_line_s *next;
+} list_line;
+
+
+
+typedef struct inbuilt_s
+{
+	char *name;
+	int (*f)(dt_shell *dtsh);
+} inbuilt_t;
+
+
+
+typedef struct list_sep_s
+{
+	char separator;
+	struct list_sep_s *next;
+} list_sep;
+
+
+
+typedef struct dt
+{
+        char **args;
+	int status;
+	int counter
+	char **_envir;
+	char *pid;
+        char **av;
+	char *input;
+} dt_shell;
 
 
 
