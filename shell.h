@@ -63,9 +63,17 @@ typedef struct dt
 
 
 
-* envir_a.c */
+/* envir_a.c */
 char *get_envir(const char *name, char **_envir);
 int _envir(dt_shell *sh_data);
+
+
+/* envir_b.c */
+char *info_copy(char *name, char *value);
+void envi_set(char *name, char *value, dt_shell *sh_data);
+int _st_env(dt_shell *sh_data);
+int _unst_env(dt_shell *sh_data);
+
 
 
 

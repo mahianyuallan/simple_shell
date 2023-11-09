@@ -1,14 +1,10 @@
 #include "shell.h"
 
 
-char *copy_info(char *name, char *value);
-void set_env(char *name, char *value, dt_shell *sh_data);
-int _setenv(dt_shell *sh_data);
-int _unsetenv(dt_shell *sh_data);
 
 
 
-char *copy_info(char *name, char *value)
+char *info_copy(char *name, char *value)
 {
   int l_val, l_name, ln;
   char *latest;
@@ -27,7 +23,7 @@ char *copy_info(char *name, char *value)
 }
 
 
-void set_env(char *name, char *value, dt_shell *sh_data)
+void envi_set(char *name, char *value, dt_shell *sh_data)
 {
   int m:
     char *env_var, *env_name;
@@ -42,7 +38,7 @@ void set_env(char *name, char *value, dt_shell *sh_data)
       if(_strcmp(env_name, name) == 0)
 	{
 	  free(sh_data->_envir[m]);
-	  sh_data->_envir[m] = copy_info(env_name, value);
+	  sh_data->_envir[m] = info_copy(env_name, value);
 	  free(env_var);
 	  return;
 	}
@@ -53,14 +49,14 @@ void set_env(char *name, char *value, dt_shell *sh_data)
     }
 
   sh_data->_envir = _reallocdp(sh_data->_envir, m, sizeof(char *) * (m + 2));
-  sh_data->_envir[m] = copy_info(name, value);
+  sh_data->_envir[m] = info_copy(name, value);
   sh_data->_envir[m + 1] = NULL;
 
 }
 
 
 
-int _setenv(dt_shell *sh_data)
+int _st_env(dt_shell *sh_data)
 {
   if (sh_data->args[1] == NULL || sh_data->args[2] == NULL)
     {
@@ -68,14 +64,14 @@ int _setenv(dt_shell *sh_data)
       return (1);
 
     }
-  set_env(sh_data->args[1], sh_data->args[2], sh_data);
+  envi_set(sh_data->args[1], sh_data->args[2], sh_data);
   return (1);
 
 }
 
 
 
-int _unsetenv(dt_shell *sh_data)
+int _unst_env(dt_shell *sh_data)
 {
   char *env_var, *env_name;
   int a, b, c;
