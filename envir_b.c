@@ -25,7 +25,7 @@ char *info_copy(char *name, char *value)
 
 void envi_set(char *name, char *value, dt_shell *sh_data)
 {
-  int m:
+  int m;
     char *env_var, *env_name;
 
   m = 0;
