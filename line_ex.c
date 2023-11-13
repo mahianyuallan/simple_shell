@@ -1,7 +1,7 @@
 #include "shell.h"
 
 
-int line_ex(dt_shell *sh_data);
+int line_ex(dt_shell *sh_data)
 {
 	int (*inbuilt)(dt_shell *sh_data);
 	if (sh_data->args[0] == NULL)
