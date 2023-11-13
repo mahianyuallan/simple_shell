@@ -1,7 +1,7 @@
 #include "shell.h"
 
 
-int (*inbuilt_get(char *cmd))(dt_shell *sh_data);
+int (*inbuilt_get(char *cmd))(dt_shell *sh_data)
 {
 	inbuilt_t inbuilt[] = 
 	{
