@@ -51,7 +51,7 @@ char *char_swp(char *in, int bool)
 }
 
 
-void new_nodes(list_sep **head_s, list_line **head_l, char *in);
+void new_nodes(list_sep **head_s, list_line **head_l, char *in)
 {
 	int m;
 	char *strip;
@@ -85,7 +85,7 @@ void new_nodes(list_sep **head_s, list_line **head_l, char *in);
 }
 
 
-void forward(list_sep **list_s, list_line **list_l, dt_shell *sh_data);
+void forward(list_sep **list_s, list_line **list_l, dt_shell *sh_data)
 {
 	int loop_sep;
 	list_sep *ls_s;
@@ -120,7 +120,7 @@ void forward(list_sep **list_s, list_line **list_l, dt_shell *sh_data);
 }
 
 
-int cmd_split(dt_shell *sh_data, char *in);
+int cmd_split(dt_shell *sh_data, char *in)
 {
 
 	list_sep *head_s, *list_s;
@@ -160,7 +160,7 @@ int cmd_split(dt_shell *sh_data, char *in);
 }
 
 
-char **line_split(char *in);
+char **line_split(char *in)
 {
 	size_t size_bit; 
 	char *tkn;
