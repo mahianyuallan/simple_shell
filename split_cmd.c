@@ -1,7 +1,7 @@
 #include "shell.h"
 
 
-char *char_swp(char *in, int bool);
+char *char_swp(char *in, int bool)
 {
 	int m;
 
