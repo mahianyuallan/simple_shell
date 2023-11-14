@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * cd_shell - changes current directory
+ * cd_shell - change directory
  *
- * @datash: data relevant
- * Return: 1 on success
+ * @datash: relevant data
+ * Return: 1 if successful, 0 if not
  */
-int cd_shell(data_shell *datash)
+int cd_shell(dt_shell *datash)
 {
 	char *dir;
 	int ishome, ishome2, isddash;
