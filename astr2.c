@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _strdup - duplicates a str in the heap memory.
- * @s: Type char pointer str
- * Return: duplicated str
+ * _strdup - makes a duplicate of a str in the heap memory.
+ * @s: pointer str
+ * Return: the duplicated str
  */
 char *_strdup(const char *s)
 {
@@ -19,9 +19,9 @@ char *_strdup(const char *s)
 }
 
 /**
- * _strlen - Returns the lenght of a string.
- * @s: Type char pointer
- * Return: Always 0.
+ * _strlen - the length of a str.
+ * @s: Type the char pointer
+ * Return: Always (0).
  */
 int _strlen(const char *s)
 {
@@ -34,11 +34,11 @@ int _strlen(const char *s)
 }
 
 /**
- * cmp_chars - compare chars of strings
- * @str: input string.
- * @delim: delimiter.
+ * cmp_chars - used to compare the char of strings
+ * @str: it is used to input string.
+ * @delim: the  delimiter.
  *
- * Return: 1 if are equals, 0 if not.
+ * Return: 1 they are the same, 0 output if not the same.
  */
 int cmp_chars(char str[], const char *delim)
 {
@@ -61,11 +61,11 @@ int cmp_chars(char str[], const char *delim)
 }
 
 /**
- * _strtok - splits a string by some delimiter.
- * @str: input string.
- * @delim: delimiter.
+ * _strtok - divides a str by a delimitre.
+ * @str: a string.
+ * @delim: unit in delimiter.
  *
- * Return: string splited.
+ * Return: the divided string.
  */
 char *_strtok(char str[], const char *delim)
 {
@@ -113,8 +113,8 @@ char *_strtok(char str[], const char *delim)
 /**
  * _isdigit - defines if string passed is a number
  *
- * @s: input string
- * Return: 1 if string is a number. 0 in other case.
+ * @s: a string
+ * Return: 1 if string is a value. 0 if it is not a value.
  */
 int _isdigit(const char *s)
 {
