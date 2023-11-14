@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * _strcat - concatenate two strings
- * @dest: char pointer the dest of the copied str
- * @src: const char pointer the source of str
- * Return: the dest
+ * _strcat - links two individual strings
+ * @dest: char pointer
+ * @src: this is the source of str
+ * Return: dest
  */
 char *_strcat(char *dest, const char *src)
 {
@@ -24,10 +24,10 @@ char *_strcat(char *dest, const char *src)
 	return (dest);
 }
 /**
- * *_strcpy - Copies the string pointed to by src.
- * @dest: Type char pointer the dest of the copied str
- * @src: Type char pointer the source of str
- * Return: the dest.
+ * *_strcpy - attaches pointer to src.
+ * @dest: the dest of the copied str
+ * @src: the source of str
+ * Return: dest.
  */
 char *_strcpy(char *dest, char *src)
 {
@@ -43,10 +43,10 @@ char *_strcpy(char *dest, char *src)
 	return (dest);
 }
 /**
- * _strcmp - Function that compares two strings.
- * @s1: type str compared
- * @s2: type str compared
- * Return: Always 0.
+ * _strcmp - it is used to compare two strings.
+ * @s1: first str 
+ * @s2: second str
+ * Return: Always (0).
  */
 int _strcmp(char *s1, char *s2)
 {
@@ -62,10 +62,10 @@ int _strcmp(char *s1, char *s2)
 	return (0);
 }
 /**
- * _strchr - locates a character in a string,
- * @s: string.
- * @c: character.
- * Return: the pointer to the first occurrence of the character c.
+ * _strchr - fucntion used to locate a char in a str,
+ * @s: the string.
+ * @c: the character.
+ * Return: the pointer of the character c.
  */
 char *_strchr(char *s, char c)
 {
@@ -79,10 +79,10 @@ char *_strchr(char *s, char c)
 	return ('\0');
 }
 /**
- * _strspn - gets the length of a prefix substring.
- * @s: initial segment.
- * @accept: accepted bytes.
- * Return: the number of accepted bytes.
+ * _strspn - a prefix substring.
+ * @s:  segment.
+ * @accept: valid bytes.
+ * Return: the number of valid bytes.
  */
 int _strspn(char *s, char *accept)
 {
