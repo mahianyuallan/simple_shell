@@ -51,14 +51,23 @@ typedef struct list_sep_s
 
 typedef struct dt
 {
-        char **args;
+    char **args;
 	int status;
 	int counter
 	char **_envir;
 	char *pid;
-        char **av;
+    char **av;
 	char *input;
 } dt_shell;
+
+typedef struct list_l_var
+{
+	int len_var;
+	char *val;
+	int len_val;
+	struct list_l_var *next;
+} l_var;
+
 
 
 
