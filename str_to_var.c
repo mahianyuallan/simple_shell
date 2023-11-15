@@ -17,15 +17,13 @@ char **_envr;
 
 _envr = data->_envir;
 column = 0;
-
 while (_envr[column])
 {
 m = 1;
 str = 0;
-
-while (_envr[column][str]) 
+while (_envr[column][str])
 {
-switch (_envr[column][str]) 
+switch (_envr[column][str])
 {
 case '=':
 last_val = _strlen(_envr[column] + str + 1);
@@ -41,11 +39,10 @@ str++;
 }
 column++;
 }
-
 m = 0;
-while (in[m]) 
+while (in[m])
 {
-switch (in[m]) 
+switch (in[m])
 {
 case ' ':
 case '\t':
@@ -81,7 +78,7 @@ last = _strlen(st);
 last_pid = _strlen(data->pid);
 
 a = 0;
-while (in[a]) 
+while (in[a])
 {
 if (in[a] == '$')
 {
@@ -148,7 +145,8 @@ else if (index->len_var && !(index->len_val))
 for (n = 0; n < index->len_var; n++)
 m++;
 a--;
-} else
+}
+else
 {
 for (n = 0; n < index->len_val; n++)
 {
@@ -159,7 +157,8 @@ m += (index->len_var);
 a--;
 }
 index = index->next;
-} else {
+} else
+{
 new_input[a] = in[m];
 m++;
 }
@@ -172,8 +171,8 @@ return (new_input);
 /**
  * var_replace - Replace variables in the input string.
  *
- * This function replaces variables in the input string based on the linked
- * list head and returns the new input string. It also frees the original input.
+ * This function replaces variables in the input\based on the linked
+ * list head and returns the new input string. It also frees the original
  *
  * @input: Original input string.
  * @sh_data: Pointer to the dt_shell structure.
@@ -189,34 +188,25 @@ int olen, nlen;
 
 status = str_int_ax(sh_data->status);
 head = NULL;
-
 olen = var_chk(&head, input, status, sh_data);
-
 if (head == NULL)
 {
 free(status);
 return (input);
 }
-
 index = head;
 nlen = 0;
-
 while (index != NULL)
 {
 nlen += (index->len_val - index->len_var);
 index = index->next;
 }
-
 nlen += olen;
-
 new_input = malloc(sizeof(char) * (nlen + 1));
 new_input[nlen] = '\0';
-
 new_input = input_rep(&head, input, new_input, nlen);
-
 free(input);
 free(status);
 var_free_list(&head);
-
 return (new_input);
 }
