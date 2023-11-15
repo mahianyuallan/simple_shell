@@ -9,7 +9,7 @@
  * Return: A function pointer to the built-in command, or NULL if not found.
  */
 
-int (*inbuilt_get(char * cmd))(dt_shell *sh_data)
+int ( *inbuilt_get(char *cmd))(dt_shell *sh_data)
 {
 	inbuilt_t inbuilt[] = {
 		{ "env", _envir },
