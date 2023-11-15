@@ -4,7 +4,7 @@
  * info_copy - Create a new environment variable string.
  *
  * This function creates a new string containing the environment variable
- * name and value in the format "name=value". It returns the newly created string.
+ * name and value in the format "name=value".
  *
  * @name: The name of the environment variable.
  * @value: The value of the environment variable.
@@ -111,21 +111,14 @@ if (sh_data->args[1] == NULL)
 err_get(sh_data, -1);
 return (1);
 }
-
 c = -1;
-a = 0;
-
 while (sh_data->_envir[a])
 {
 env_var = _strdup(sh_data->_envir[a]);
 env_name = _strtok(env_var, "=");
-
 if (_strcmp(env_name, sh_data->args[1]) == 0)
-{
 c = 1;
-}
 free(env_var);
-
 a++;
 }
 if (c == -1)
@@ -134,7 +127,6 @@ err_get(sh_data, -1);
 return (1);
 }
 envi_realloc = malloc(sizeof(char *) * (a));
-
 a = b = 0;
 while (sh_data->_envir[a])
 {

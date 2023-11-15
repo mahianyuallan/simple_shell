@@ -180,6 +180,7 @@ return (new_input);
  *
  * Return: Pointer to the new input string.
  */
+
 char *var_replace(char *input, dt_shell *sh_data)
 {
 l_var *head, *index;
