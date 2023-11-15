@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * strcat_cd - this is a function that links the message for the changing directory error
+ * catstr_cd - this is a function that links the message for the changing directory error
  *
  * @sh_data: it shows only relevant data off of the directory
  * @msg: a message that outputs print
@@ -10,7 +10,7 @@
  * Return: shows the error message
  */
 
-char *strcat_cd(dt_shell *sh_data, char *msg, char *error, char *ver_str)
+char *catstr_cd(dt_shell *sh_data, char *msg, char *error, char *ver_str)
 {
 	char *illegal_flag;
 
@@ -40,11 +40,11 @@ char *strcat_cd(dt_shell *sh_data, char *msg, char *error, char *ver_str)
 }
 
 /**
- * error_get_cd - shows any potential errors in get_cd
+ * get_error_cd - shows any potential errors in get_cd
  * @sh_data: shows only relevant data off of the directory
  * Return: shows the error message
  */
-char *error_get_cd(dt_shell *sh_data)
+char *get_error_cd(dt_shell *sh_data)
 {
 	int length, len_id;
 	char *error, *ver_str, *msg;
@@ -71,7 +71,7 @@ char *error_get_cd(dt_shell *sh_data)
 		return (NULL);
 	}
 
-	error = strcat_cd(sh_data, msg, error, ver_str);
+	error = catstr_cd(sh_data, msg, error, ver_str);
 
 	free(ver_str);
 
@@ -79,11 +79,11 @@ char *error_get_cd(dt_shell *sh_data)
 }
 
 /**
- * error_not_found - shows the general error message for command not found
+ * no_error_found - shows the general error message for command not found
  * @sh_data: shows any relevant counters and arguments
  * Return: shows any relevant error message
  */
-char *error_not_found(dt_shell *sh_data)
+char *no_error_found(dt_shell *sh_data)
 {
 	int length;
 	char *error;
@@ -111,12 +111,12 @@ char *error_not_found(dt_shell *sh_data)
 }
 
 /**
- * error_exit_shell - shows the error message in the exit function for exit_shell
+ * exit_error_shell - shows the error message in the exit function for exit_shell
  * @sh_data: shows arguments and counters that are relevant to the data
  * * Return: shows any relevant error message
  */
 
-char *error_exit_shell(dt_shell *sh_data)
+char *exit_error_shell(dt_shell *sh_data)
 {
 	int length;
 	char *error;
