@@ -34,35 +34,35 @@ void dt_free(dt_shell *sh_data)
  */
 void dt_set(dt_shell *sh_data, char **av)
 {
-	unsigned int m;
+unsigned int m;
 
-	sh_data->args = NULL;
+sh_data->args = NULL;
 
-	sh_data->status = 0;
+sh_data->status = 0;
 
-	sh_data->av = av;
+sh_data->av = av;
 
-	sh_data->counter = 1;
+sh_data->counter = 1;
 
-	sh_data->input = NULL;
-	m = 0;
+sh_data->input = NULL;
+m = 0;
 
-		while (environ[m])
-		{
-		 m++;
-		}
+while (environ[m])
+{
+m++;
+}
 
-	sh_data->_envir = malloc(sizeof(char *) * (m + 1));
+sh_data->_envir = malloc(sizeof(char *) * (m + 1));
 
-	m = 0;
-	while (environ[m])
-	{
-		sh_data->_envir[m] = _strdup(environ[m]);
-		m++;
-	}
+m = 0;
+while (environ[m])
+{
+sh_data->_envir[m] = _strdup(environ[m]);
+m++;
+}
 
-	sh_data->_envir[m] = NULL;
-	sh_data->pid = str_int_ax(getpid());
+sh_data->_envir[m] = NULL;
+sh_data->pid = str_int_ax(getpid());
 }
 
 /**
