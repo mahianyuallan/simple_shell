@@ -1,10 +1,10 @@
-#include "main.h"
+#include "shell.h"
 
 /**
- * help_aux - contains help infor for the env.
+ * help_ax - contains help infor for the env.
  * Return: null
  */
-void help_aux(void)
+void help_ax(void)
 {
 	char *help = "help: help [-dms] [pattern ...]\n";
 
@@ -15,10 +15,10 @@ void help_aux(void)
 	write(STDOUT_FILENO, help, _strlen(help));
 }
 /**
- * help_aux_alias - contains help info for the alias.
+ * alias_help_ax - contains help info for the alias.
  * Return: no return
  */
-void help_aux_alias(void)
+void alias_help_ax(void)
 {
 	char *help = "alias: alias [-p] [name[=value]...]\n";
 
@@ -27,10 +27,10 @@ void help_aux_alias(void)
 	write(STDOUT_FILENO, help, _strlen(help));
 }
 /**
- * help_aux_cd - contains help info for the secondary alias.
+ * cmd_help_ax - contains help info for the secondary alias.
  * Return: null
  */
-void help_aux_cd(void)
+void cmd_help_ax(void)
 {
 	char *help = "cd: cd [-L|[-P [-e]] [-@]] [dir]\n";
 

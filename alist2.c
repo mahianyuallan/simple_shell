@@ -1,7 +1,7 @@
-#include "main.h"
+#include "shell.h"
 
 /**
- * add_rvar_node - the function adds a variable
+ * var_add_nd - the function adds a variable
  * of a l_var list.
  * @head: this is the head of the list.
  * @lvar: this is length of the variable (number of characters).
@@ -9,7 +9,7 @@
  * @lval: this is length of the value.
  * Return: this is the main address of the head.
  */
-l_var *add_rvar_node(l_var **head, int lvar, char *val, int lval)
+l_var *var_add_nd(l_var **head, int lvar, char *val, int lval)
 {
 	l_var *new, *temp;
 
@@ -39,11 +39,11 @@ l_var *add_rvar_node(l_var **head, int lvar, char *val, int lval)
 }
 
 /**
- * free_rvar_list - frees a l_var list
+ * var_free_list - frees a l_var list
  * @head: head of the linked list.
  * Return: no return.
  */
-void free_rvar_list(l_var **head)
+void var_free_list(l_var **head)
 {
 	l_var *temp;
 	l_var *curr;

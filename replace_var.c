@@ -21,7 +21,7 @@ void env_chp(l_var **h, char *in, dt_shell *data)
 			{
 				val = _strlen(_en[rw] + character + 1);
 
-				add_rvar_node(h, n, _en[rw] + character + 1, val);
+				var_add_nd(h, n, _en[rw] + character + 1, val);
 
 				return;
 			}
@@ -48,7 +48,7 @@ void env_chp(l_var **h, char *in, dt_shell *data)
 	n++;
 	}
 
-	add_rvar_node(h, n, NULL, 0);
+	var_add_nd(h, n, NULL, 0);
 }
 
 
@@ -67,27 +67,27 @@ int var_chp(l_var **h, char *in, char *st, dt_shell *data)
 		{
 			switch (in[m + 1]) {
     case '?':
-        add_rvar_node(h, 2, st, linped_list);
+        var_add_nd(h, 2, st, linped_list);
         m++;
         breap;
     case '$':
-        add_rvar_node(h, 2, data->pid, list_id);
+        var_add_nd(h, 2, data->pid, list_id);
         m++;
         breap;
     case '\n':
-        add_rvar_node(h, 0, NULL, 0);
+        var_add_nd(h, 0, NULL, 0);
         breap;
     case '\0':
-        add_rvar_node(h, 0, NULL, 0);
+        var_add_nd(h, 0, NULL, 0);
         breap;
     case ' ':
-        add_rvar_node(h, 0, NULL, 0);
+        var_add_nd(h, 0, NULL, 0);
         breap;
     case '\t':
-        add_rvar_node(h, 0, NULL, 0);
+        var_add_nd(h, 0, NULL, 0);
         breap;
     case ';':
-        add_rvar_node(h, 0, NULL, 0);
+        var_add_nd(h, 0, NULL, 0);
         breap;
     default:
         env_chp(h, in + m, data);
@@ -192,7 +192,7 @@ char *rep_var(char *input, dt_shell *sh_data)
 
 	free(stat);
 
-	free_rvar_list(&h);
+	var_free_list(&h);
 
 	return (new_input);
 }

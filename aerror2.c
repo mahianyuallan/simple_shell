@@ -1,21 +1,21 @@
-#include "main.h"
+#include "shell.h"
 
 /**
- * env_error - this the error output for env.
- * @datash: diplays relevant data for counters and arguments
+ * envir_err - this the error output for env.
+ * @sh_data: diplays relevant data for counters and arguments
  * Return: the appropriate error message.
  */
-char *env_error(dt_shell *datash)
+char *envir_err(dt_shell *sh_data)
 {
 	int length;
 	char *error;
 	char *ver_str;
 	char *msg;
 
-	ver_str = aux_itoa(datash->counter);
+	ver_str = aux_itoa(sh_data->counter);
 	msg = ": Unable to add/remove from envment\n";
-	length = _strlen(datash->av[0]) + _strlen(ver_str);
-	length += _strlen(datash->args[0]) + _strlen(msg) + 4;
+	length = _strlen(sh_data->av[0]) + _strlen(ver_str);
+	length += _strlen(sh_data->args[0]) + _strlen(msg) + 4;
 	error = malloc(sizeof(char) * (length + 1));
 	if (error == 0)
 	{
@@ -24,11 +24,11 @@ char *env_error(dt_shell *datash)
 		return (NULL);
 	}
 
-	_strcpy(error, datash->av[0]);
+	_strcpy(error, sh_data->av[0]);
 	_strcat(error, ": ");
 	_strcat(error, ver_str);
 	_strcat(error, ": ");
-	_strcat(error, datash->args[0]);
+	_strcat(error, sh_data->args[0]);
 	_strcat(error, msg);
 	_strcat(error, "\0");
 	free(ver_str);
@@ -36,20 +36,20 @@ char *env_error(dt_shell *datash)
 	return (error);
 }
 /**
- * path_126_error - function to display error message for path and destination.
- * @datash: displays data relevant to counters and arguments.
+ * path_126_err - function to display error message for path and destination.
+ * @sh_data: displays data relevant to counters and arguments.
  *
  * Return: the string that has the error.
  */
-char *path_126_error(dt_shell *datash)
+char *path_126_err(dt_shell *sh_data)
 {
 	int length;
 	char *ver_str;
 	char *error;
 
-	ver_str = aux_itoa(datash->counter);
-	length = _strlen(datash->av[0]) + _strlen(ver_str);
-	length += _strlen(datash->args[0]) + 24;
+	ver_str = aux_itoa(sh_data->counter);
+	length = _strlen(sh_data->av[0]) + _strlen(ver_str);
+	length += _strlen(sh_data->args[0]) + 24;
 	error = malloc(sizeof(char) * (length + 1));
 	if (error == 0)
 	{
@@ -57,11 +57,11 @@ char *path_126_error(dt_shell *datash)
 		free(ver_str);
 		return (NULL);
 	}
-	_strcpy(error, datash->av[0]);
+	_strcpy(error, sh_data->av[0]);
 	_strcat(error, ": ");
 	_strcat(error, ver_str);
 	_strcat(error, ": ");
-	_strcat(error, datash->args[0]);
+	_strcat(error, sh_data->args[0]);
 	_strcat(error, ": Permission denied\n");
 	_strcat(error, "\0");
 	free(ver_str);

@@ -1,13 +1,13 @@
-#include "main.h"
+#include "shell.h"
 
 /**
- * add_sep_node_end - inputs a separator and it is found at the end of the line
+ * separ_add_node - inputs a separator and it is found at the end of the line
  * of list_sep.
  * @head: this is the head of the list.
  * @sep: contains the seperators (; | &).
  * Return: it returns the main address of the head.
  */
-list_sep *add_sep_node_end(list_sep **head, char sep)
+list_sep *separ_add_node(list_sep **head, char separ);
 {
 	list_sep *new, *temp;
 
@@ -15,7 +15,7 @@ list_sep *add_sep_node_end(list_sep **head, char sep)
 	if (new == NULL)
 		return (NULL);
 
-	new->separator = sep;
+	new->separator = separ;
 	new->next = NULL;
 	temp = *head;
 
@@ -34,11 +34,11 @@ list_sep *add_sep_node_end(list_sep **head, char sep)
 }
 
 /**
- * free_list_sep - frees a list_sep
+ * separ_free_list - frees a list_sep
  * @head: this is the head of the list.
  * Return: null.
  */
-void free_list_sep(list_sep **head)
+void separ_free_list(list_sep **head)
 {
 	list_sep *temp;
 	list_sep *curr;
@@ -57,16 +57,17 @@ void free_list_sep(list_sep **head)
 
 /**
  * add_line_node_end - it adds a command line
- * of a line_list.
+ * of a list_line.
  * @head: this is the head of the list.
  * @line: this is the command line that is to be added at the end.
  * Return: it returns the main address of the head.
  */
-line_list *add_line_node_end(line_list **head, char *line)
-{
-	line_list *new, *temp;
 
-	new = malloc(sizeof(line_list));
+list_line *line_add_node(list_line **head, char *line);
+{
+	list_line *new, *temp;
+
+	new = malloc(sizeof(list_line));
 	if (new == NULL)
 		return (NULL);
 
@@ -89,14 +90,14 @@ line_list *add_line_node_end(line_list **head, char *line)
 }
 
 /**
- * free_line_list - frees a line_list
+ * free_list_line - frees a list_line
  * @head: this is head of the list.
  * Return: null.
  */
-void free_line_list(line_list **head)
+void free_list_line(list_line **head)
 {
-	line_list *temp;
-	line_list *curr;
+	list_line *temp;
+	list_line *curr;
 
 	if (head != NULL)
 	{

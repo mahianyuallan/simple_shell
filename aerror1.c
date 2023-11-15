@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * catstr_cd - this is a function that links the message for the changing directory error
@@ -12,6 +12,7 @@
 
 char *catstr_cd(dt_shell *sh_data, char *msg, char *error, char *ver_str)
 {
+	
 	char *illegal_flag;
 
 	_strcpy(error, sh_data->av[0]);
@@ -40,11 +41,11 @@ char *catstr_cd(dt_shell *sh_data, char *msg, char *error, char *ver_str)
 }
 
 /**
- * get_error_cd - shows any potential errors in get_cd
+ * get_cmd_err - shows any potential errors in get_cd
  * @sh_data: shows only relevant data off of the directory
  * Return: shows the error message
  */
-char *get_error_cd(dt_shell *sh_data)
+char *get_cmd_err(dt_shell *sh_data)
 {
 	int length, len_id;
 	char *error, *ver_str, *msg;
@@ -79,11 +80,11 @@ char *get_error_cd(dt_shell *sh_data)
 }
 
 /**
- * no_error_found - shows the general error message for command not found
+ * not_found_err - shows the general error message for command not found
  * @sh_data: shows any relevant counters and arguments
  * Return: shows any relevant error message
  */
-char *no_error_found(dt_shell *sh_data)
+char *not_found_err(dt_shell *sh_data)
 {
 	int length;
 	char *error;
@@ -111,12 +112,12 @@ char *no_error_found(dt_shell *sh_data)
 }
 
 /**
- * exit_error_shell - shows the error message in the exit function for exit_shell
+ * sh_exit_err - shows the error message in the exit function for exit_shell
  * @sh_data: shows arguments and counters that are relevant to the data
  * * Return: shows any relevant error message
  */
 
-char *exit_error_shell(dt_shell *sh_data)
+char *sh_exit_err(dt_shell *sh_data)
 {
 	int length;
 	char *error;

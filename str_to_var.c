@@ -15,7 +15,7 @@ while (_envr[column]) {
         switch (_envr[column][str]) {
         case '=':
             last_val = _strlen(_envr[column] + str + 1);
-            add_rvar_node(h, m, _envr[column] + str + 1, last_val);
+            var_add_nd(h, m, _envr[column] + str + 1, last_val);
             return;
         default:
             if (in[m] == _envr[column][str])
@@ -41,7 +41,7 @@ while (in[m]) {
     }
 }
 
-	add_rvar_node(h, m, NULL, 0);
+	var_add_nd(h, m, NULL, 0);
 }
 
 
@@ -58,11 +58,11 @@ while (in[a]) {
     if (in[a] == '$') {
         switch (in[a + 1]) {
         case '?':
-            add_rvar_node(h, 2, st, last);
+            var_add_nd(h, 2, st, last);
             i++;
             break;
         case '$':
-            add_rvar_node(h, 2, data->pid, last_pid);
+            var_add_nd(h, 2, data->pid, last_pid);
             a++;
             break;
         case '\n':
@@ -70,7 +70,7 @@ while (in[a]) {
         case ' ':
         case '\t':
         case ';':
-            add_rvar_node(h, 0, NULL, 0);
+            var_add_nd(h, 0, NULL, 0);
             break;
         default:
             env_chk(h, in + a, data);
@@ -155,7 +155,7 @@ char *var_rep(char *input, dt_shell *sh_data)
 
 	free(input);
 	free(status);
-	free_rvar_list(&head);
+	var_free_list(&head);
 
 	return (new_input);
 }
