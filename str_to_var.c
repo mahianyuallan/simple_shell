@@ -13,7 +13,7 @@
 void env_chk(l_var **h, char *in, dt_shell *data)
 {
 int column = 0, str, m = 1, last_val;
-char **_envr = data->_envir;;
+char **_envr = data->_envir;
 
 while (_envr[column])
 {
