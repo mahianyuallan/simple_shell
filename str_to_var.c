@@ -124,7 +124,7 @@ while (a < nlen) {
 }
 
 
-char *var_rep(char *input, dt_shell *sh_data)
+char *var_replace(char *input, dt_shell *sh_data)
 {
 	l_var *head, *index;
 	char *status, *new_input;
