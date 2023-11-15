@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * error_env - this the error output for env.
+ * env_error - this the error output for env.
  * @datash: diplays relevant data for counters and arguments
  * Return: the appropriate error message.
  */
-char *error_env(dt_shell *datash)
+char *env_error(dt_shell *datash)
 {
 	int length;
 	char *error;
@@ -36,12 +36,12 @@ char *error_env(dt_shell *datash)
 	return (error);
 }
 /**
- * error_path_126 - function to display error message for path and destination.
+ * path_126_error - function to display error message for path and destination.
  * @datash: displays data relevant to counters and arguments.
  *
  * Return: the string that has the error.
  */
-char *error_path_126(dt_shell *datash)
+char *path_126_error(dt_shell *datash)
 {
 	int length;
 	char *ver_str;
