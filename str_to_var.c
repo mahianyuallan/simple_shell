@@ -12,8 +12,8 @@ void env_chk(l_var **h, char *in, dt_shell *data)
 	_envr = data->_envir;
 	column = 0;
 while (_envr[column]) {
-    int m = 1;
-    int str = 0;
+    m = 1;
+    str = 0;
 
     while (_envr[column][str]) {
         switch (_envr[column][str]) {
@@ -32,7 +32,7 @@ while (_envr[column]) {
     column++;
 }
 
-int m = 0;
+m = 0;
 while (in[m]) {
     switch (in[m]) {
     case ' ':
@@ -57,13 +57,13 @@ int var_chk(l_var **h, char *in, char *st, dt_shell *data)
 	last = _strlen(st);
 	last_pid = _strlen(data->pid);
 
-	int a = 0;
+	a = 0;
 while (in[a]) {
     if (in[a] == '$') {
         switch (in[a + 1]) {
         case '?':
             var_add_nd(h, 2, st, last);
-            i++;
+            a++;
             break;
         case '$':
             var_add_nd(h, 2, data->pid, last_pid);
@@ -93,19 +93,19 @@ char *input_rep(l_var **head, char *in, char *new_input, int nlen)
 	int a, m, n;
 
 	index = *head;
-	int m = 0;
-int a = 0;
+	m = 0;
+    a = 0;
 while (a < nlen) {
-    if (input[m] == '$') {
+    if (in[m] == '$') {
         if (!(index->len_var) && !(index->len_val)) {
             new_input[a] = input[m];
             m++;
         } else if (index->len_var && !(index->len_val)) {
-            for (int n = 0; n < index->len_var; n++)
+            for ( n = 0; n < index->len_var; n++)
                 m++;
             a--;
         } else {
-            for (int n = 0; n < index->len_val; n++) {
+            for ( n = 0; n < index->len_val; n++) {
                 new_input[a] = index->val[n];
                 a++;
             }
@@ -114,7 +114,7 @@ while (a < nlen) {
         }
         index = index->next;
     } else {
-        new_input[a] = input[m];
+        new_input[a] = in[m];
         m++;
     }
     a++;

@@ -141,8 +141,8 @@ int cmd_split(dt_shell *sh_data, char *in)
 
 	while (list_l != NULL)
 	{
-		sh_data->in = list_l->line;
-		sh_data->args = line_split(sh_data->in);
+		sh_data->input = list_l->line;
+		sh_data->args = line_split(sh_data->input);
 		loop = line_ex(sh_data);
 		free(sh_data->args);
 
@@ -155,7 +155,7 @@ int cmd_split(dt_shell *sh_data, char *in)
 			list_l = list_l->next;
 	}
 
-	free_list_sep(&head_s);
+	separ_free_list(&head_s);
 	free_list_line(&head_l);
 
 	if (loop == 0)

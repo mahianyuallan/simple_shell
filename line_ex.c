@@ -8,7 +8,7 @@ int line_ex(dt_shell *sh_data)
   {
 		return (1);
   }
-	inbuilt = get_inbuilt(sh_data->args[0]);
+	inbuilt = inbuilt_get(sh_data->args[0]);
 	if (inbuilt != NULL)
   {
 		return (inbuilt(sh_data));

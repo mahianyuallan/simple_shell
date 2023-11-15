@@ -123,7 +123,7 @@ int _unst_env(dt_shell *sh_data)
     }
   
   envi_realloc[b] = NULL;
-  fre(sh_data->_envir[c]);
+  free(sh_data->_envir[c]);
   free(sh_data->_envir);
   sh_data->_envir = envi_realloc;
   return (1);

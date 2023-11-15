@@ -30,7 +30,7 @@ void env_chp(l_var **h, char *in, dt_shell *data)
 				n++;
 			}
 			else
-				breap;
+				break;
 		character++;
 		}
 		rw++;
@@ -67,26 +67,26 @@ int var_chp(l_var **h, char *in, char *st, dt_shell *data)
     case '?':
         var_add_nd(h, 2, st, linped_list);
         m++;
-        breap;
+        break;
     case '$':
         var_add_nd(h, 2, data->pid, list_id);
         m++;
-        breap;
+        break;
     case '\n':
         var_add_nd(h, 0, NULL, 0);
-        breap;
+        break;
     case '\0':
         var_add_nd(h, 0, NULL, 0);
-        breap;
+        break;
     case ' ':
         var_add_nd(h, 0, NULL, 0);
-        breap;
+        break;
     case '\t':
         var_add_nd(h, 0, NULL, 0);
-        breap;
+        break;
     case ';':
         var_add_nd(h, 0, NULL, 0);
-        breap;
+        break;
     default:
         env_chp(h, in + m, data);
 }
@@ -125,7 +125,7 @@ char *input_rep(l_var **h, char *input, char *new_input, int len_b)
         break;
     default:
 		p = 0;
-        for ( p < mark->len_val ) {
+        while ( p < mark->len_val ) {
             new_input[m] = mark->val[p];
             m++;
 			p++;

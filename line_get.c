@@ -4,39 +4,36 @@
 void set_line(char **l_ptr, size_t *n, char *buff_size, size_t m)
 {
 
-
-	switch (*l_ptr) {
-
-    case NULL:
-		if  (m > BUFF)
+	if (*l_ptr == NULL)
+	{
+		if  (j > BUFF)
 		{
-			*n = m;
+			*n = j;
 		}
 		else
 		{
 			*n = BUFF;
 		}
 		*l_ptr = buff_size;
-        
-        break;
-    default:
-        if (*n < m) {
-            if (m > BUFF)
-			{
-				*n = m;
-			}
+	}
+	else if (*n < j)
+	{
+		if (j > BUFF)
+		{
+			*n = j;
+		}
 		else
 		{
 			*n = BUFF;
 		}
 		*l_ptr = buff_size;
+	}
+	else
+	{
+		_strcpy(*l_ptr, buff_size);
+		free(buff_size);
+	}
 
-        } else {
-            _strcpy(*l_ptr, buff_size);
-			free(buff_size);
-        }
-        break;
-}
 }
 
 ssize_t line_get(char **l_ptr, size_t *n, FILE *stream)
@@ -64,7 +61,7 @@ ssize_t line_get(char **l_ptr, size_t *n, FILE *stream)
 	{
 		return (-1);
 	}
-	for (; t != '\n'; in++;)
+	for (; t != '\n'; in++)
 	{
 		m = read(STDIN_FILENO, &t, 1);
 		if (m == -1 || (m == 0 && in == 0))
@@ -92,7 +89,7 @@ ssize_t line_get(char **l_ptr, size_t *n, FILE *stream)
 
 	val = in;
 
-	if (i != 0)
+	if (m != 0)
 	{
 		in = 0;
 	}

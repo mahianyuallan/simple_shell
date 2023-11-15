@@ -7,7 +7,7 @@
  * @sep: contains the seperators (; | &).
  * Return: it returns the main address of the head.
  */
-list_sep *separ_add_node(list_sep **head, char separ);
+list_sep *separ_add_node(list_sep **head, char separ)
 {
 	list_sep *new, *temp;
 

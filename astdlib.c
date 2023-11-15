@@ -35,7 +35,7 @@ int length_get(int i)
 char *str_int_ax(int i)
 {
 	unsigned int i1;
-	int lenght = length_get(n);
+	int lenght = length_get(i);
 	char *buffer;
 
 	buffer = malloc(sizeof(char) * (lenght + 1));

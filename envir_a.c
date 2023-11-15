@@ -35,7 +35,7 @@ char *get_envir(const char *name, char **_envir)
       if (mv)
 	{
 	  env_ptr = _envir[m];
-	  break
+	  break;
 	}
       m++;
     }

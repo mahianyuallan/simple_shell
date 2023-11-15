@@ -48,7 +48,7 @@ void dt_set(dt_shell *sh_data, char **av)
 		m++;
 	}
 
-	sh_data->_envir[i] = NULL;
+	sh_data->_envir[m] = NULL;
 	sh_data->pid = str_int_ax(getpid());
 }
 
