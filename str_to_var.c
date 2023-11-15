@@ -12,14 +12,11 @@
  */
 void env_chk(l_var **h, char *in, dt_shell *data)
 {
-int column, str, m, last_val;
-char **_envr;
+int column = 0, str, m = 1, last_val;
+char **_envr = data->_envir;;
 
-_envr = data->_envir;
-column = 0;
 while (_envr[column])
 {
-m = 1;
 str = 0;
 while (_envr[column][str])
 {
@@ -125,12 +122,9 @@ return (a);
 char *input_rep(l_var **head, char *in, char *new_input, int nlen)
 {
 l_var *index;
-int a, m, n;
+int a = 0, m = 0, n;
 
 index = *head;
-m = 0;
-a = 0;
-
 while (a < nlen)
 {
 if (in[m] == '$')
@@ -157,17 +151,16 @@ m += (index->len_var);
 a--;
 }
 index = index->next;
-} else
+}
+else
 {
 new_input[a] = in[m];
 m++;
 }
 a++;
 }
-
 return (new_input);
 }
-
 /**
  * var_replace - Replace variables in the input string.
  *
