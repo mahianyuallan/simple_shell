@@ -13,20 +13,20 @@
  */
 int env_nm_comp(const char *env, const char *name)
 {
-    int m;
+int m;
 
-    m = 0;
+m = 0;
 
-    while (env[m] != '=')
-    {
-        if (env[m] != name[m])
-        {
-            return (0);
-        }
-        m++;
-    }
+while (env[m] != '=')
+{
+if (env[m] != name[m])
+{
+return (0);
+}
+m++;
+}
 
-    return (m + 1);
+return (m + 1);
 }
 
 /**
@@ -42,26 +42,26 @@ int env_nm_comp(const char *env, const char *name)
  */
 char *get_envir(const char *name, char **_envir)
 {
-    int m, mv;
-    char *env_ptr;
+int m, mv;
+char *env_ptr;
 
-    mv = 0;
-    m = 0;
-    env_ptr = NULL;
+mv = 0;
+m = 0;
+env_ptr = NULL;
 
-    while (_envir[m])
-    {
-        mv = env_nm_comp(_envir[m], name);
+while (_envir[m])
+{
+mv = env_nm_comp(_envir[m], name);
 
-        if (mv)
-        {
-            env_ptr = _envir[m];
-            break;
-        }
-        m++;
-    }
+if (mv)
+{
+env_ptr = _envir[m];
+break;
+}
+m++;
+}
 
-    return (mv + env_ptr);
+return (mv + env_ptr);
 }
 
 /**
@@ -75,23 +75,23 @@ char *get_envir(const char *name, char **_envir)
  */
 int _envir(dt_shell *sh_data)
 {
-    int m, n;
+int m, n;
 
-    m = 0;
-    n = 0;
+m = 0;
+n = 0;
 
-    while (sh_data->_envir[m])
-    {
-        while (sh_data->_envir[m][n])
-        {
-            n++;
-        }
-        write(STDOUT_FILENO, sh_data->_envir[m], n);
-        write(STDOUT_FILENO, "\n", 1);
+while (sh_data->_envir[m])
+{
+while (sh_data->_envir[m][n])
+{
+n++;
+}
+write(STDOUT_FILENO, sh_data->_envir[m], n);
+write(STDOUT_FILENO, "\n", 1);
 
-        m++;
-    }
+m++;
+}
 
-    sh_data->status = 0;
-    return (1);
+sh_data->status = 0;
+return (1);
 }
