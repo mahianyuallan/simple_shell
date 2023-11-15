@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * aux_help_env - it is used to help for relevant information for the env
+ * env_aux_help - it is used to help for relevant information for the env
  * Return: null
  */
-void aux_help_env(void)
+void env_aux_help(void)
 {
 	char *help = "env: env [option] [name=value] [command [args]]\n\t";
 
@@ -14,10 +14,10 @@ void aux_help_env(void)
 
 }
 /**
- * aux_help_setenv - it is used to help infor for the builtin setenv
+ * setenv_aux_help - it is used to help infor for the builtin setenv
  * Return: null
  */
-void aux_help_setenv(void)
+void setenv_aux_help(void)
 {
 
 	char *help = "setenv: setenv (const char *name, const char *value,";
@@ -29,10 +29,10 @@ void aux_help_setenv(void)
 	write(STDOUT_FILENO, help, _strlen(help));
 }
 /**
- * aux_help_unsetenv - used to help info for the builtin unsetenv
+ * unsetenv_aux_help - used to help info for the builtin unsetenv
  * Return: null
  */
-void aux_help_unsetenv(void)
+void unsetenv_aux_help(void)
 {
 	char *help = "unsetenv: unsetenv (const char *name)\n\t";
 
@@ -43,10 +43,10 @@ void aux_help_unsetenv(void)
 
 
 /**
- * aux_help_general - this is the entry point for the builtin env
+ * general_aux_help - this is the entry point for the builtin env
  * Return: null
  */
-void aux_help_general(void)
+void general_aux_help(void)
 {
 	char *help = "^-^ bash, version 1.0(1)-release\n";
 
@@ -65,10 +65,10 @@ void aux_help_general(void)
 	write(STDOUT_FILENO, help, _strlen(help));
 }
 /**
- * aux_help_exit - helps exit the env
+ * exit_aux_help - helps exit the env
  * Return: null
  */
-void aux_help_exit(void)
+void exit_aux_help(void)
 {
 	char *help = "exit: exit [n]\n Exit shell.\n";
 
