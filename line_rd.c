@@ -7,6 +7,6 @@ char *line_rd(int *ret_val)
 	char *add;
 	add = NULL;
 	buff_sz = NULL;
-	*ret_val = getline(&input, &bufsize, stdin);
+	*ret_val = getline(&input, &buff_sz, stdin);
 	return (add);
 }

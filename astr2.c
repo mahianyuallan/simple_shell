@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * _strdup - makes a duplicate of a str in the heap memory.

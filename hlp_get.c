@@ -6,28 +6,28 @@ int hlp_get(dt_shell *sh_data)
 {
     switch (sh_data->args[1] ? _strcmp(sh_data->args[1], "") : 0) {
     case 0:
-        aux_help_general();
+        gen_help_ax();
         break;
     case 1:
-        aux_help_setenv();
+        envirset_help_ax();
         break;
     case 2:
-        aux_help_env();
+        envir_help_ax();
         break;
     case 3:
-        aux_help_unsetenv();
+        envirunset_help_ax();
         break;
     case 4:
-        aux_help();
+        help_ax();
         break;
     case 5:
-        aux_help_exit();
+        exit_help_ax();
         break;
     case 6:
-        aux_help_cd();
+        cmd_help_ax();
         break;
     case 7:
-        aux_help_alias();
+        alias_help_ax();
         break;
     default:
         write(STDERR_FILENO, sh_data->args[0], _strlen(sh_data->args[0]));

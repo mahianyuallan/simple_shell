@@ -9,25 +9,25 @@ err = NULL;
 
 if (val_err == -1) 
 {
-    err = error_env(sh_data);
+    err = envir_err(sh_data);
 } 
 else if (val_err == 126) 
 {
-    err = error_path_126(sh_data);
+    err = path_126_err(sh_data);
 }
  else if (val_err == 127) 
  {
-    err = error_not_found(sh_data);
+    err = not_found_err(sh_data);
 } 
 else if (val_err == 2) 
 {
     if (_strcmp("exit", sh_data->args[0]) == 0) 
 	{
-        err = error_exit_shell(sh_data);
+        err = sh_exit_err(sh_data);
     } 
 	else if (_strcmp("cd", sh_data->args[0]) == 0) 
 	{
-        err = error_get_cd(sh_data);
+        err = get_cmd_err(sh_data);
     }
 }
 

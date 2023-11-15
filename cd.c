@@ -99,7 +99,7 @@ void prev_cmd(dt_shell *sh_data)
 	getcwd(pwd, sizeof(pwd));
 	cp_pwd = _strdup(pwd);
 
-	p_oldpwd = get_envir("OLDPWD", sh_data->_environ);
+	p_oldpwd = get_envir("OLDPWD", sh_data->_envir);
 
 	if (p_oldpwd == NULL)
 		cp_oldpwd = cp_pwd;
@@ -113,7 +113,7 @@ void prev_cmd(dt_shell *sh_data)
 	else
 		envi_set("PWD", cp_oldpwd, sh_data);
 
-	p_pwd = get_envir("PWD", sh_data->_environ);
+	p_pwd = get_envir("PWD", sh_data->_envir);
 
 	write(STDOUT_FILENO, p_pwd, _strlen(p_pwd));
 	write(STDOUT_FILENO, "\n", 1);
@@ -141,7 +141,7 @@ void source_cmd(dt_shell *sh_data)
 	getcwd(pwd, sizeof(pwd));
 	p_pwd = _strdup(pwd);
 
-	home = get_envir("HOME", sh_data->_environ);
+	home = get_envir("HOME", sh_data->_envir);
 
 	if (home == NULL)
 	{

@@ -67,12 +67,12 @@ void new_nodes(list_sep **head_s, list_line **head_l, char *in)
 	{
 		if (in[m] == ';')
 		{
-			add_sep_node_end(head_s, in[m]);
+			separ_add_node(head_s, in[m]);
 		}
 
 		if (in[m] == '|' || in[m] == '&')
 		{
-			add_sep_node_end(head_s, in[m]);
+			separ_add_node(head_s, in[m]);
 			m++;
 		}
 		m++;
@@ -82,7 +82,7 @@ void new_nodes(list_sep **head_s, list_line **head_l, char *in)
 	while (strip != NULL)
 	{
 		strip = char_swp(strip, 1);
-		add_line_node_end(head_l, strip);
+		line_add_node(head_l, strip);
 		strip = _strtok(NULL, ";|&");
 	} 
 
@@ -179,7 +179,7 @@ char **line_split(char *in)
 		exit(EXIT_FAILURE);
 	}
 
-	tkn = _strtok(in, TOK_DELIM);
+	tkn = _strtok(in, DELIN_TOK);
 	tkns[0] = tkn;
 
 	for (m = 1; tkn != NULL; m++)
@@ -194,7 +194,7 @@ char **line_split(char *in)
 				exit(EXIT_FAILURE);
 			}
 		}
-		tkn = _strtok(NULL, TOK_DELIM);
+		tkn = _strtok(NULL, DELIN_TOK);
 		tkns[m] = tkn;
 	}
 

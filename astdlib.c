@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * length_get - function used to get the length of the number.
