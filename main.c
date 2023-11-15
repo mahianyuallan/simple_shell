@@ -47,7 +47,7 @@ void dt_set(dt_shell *sh_data, char **av)
 	sh_data->input = NULL;
 	m = 0;
 
-	while (environ[m])
+		while (environ[m])
 		{
 		 m++;
 		}
