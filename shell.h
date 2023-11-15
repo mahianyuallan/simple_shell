@@ -20,7 +20,7 @@
 #define DELIN_TOK " \t\r\n\a"
 #define BUFF 1024
 
-char **envir;
+extern char **environ;
 
 
 

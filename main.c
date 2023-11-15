@@ -34,7 +34,7 @@ void dt_set(dt_shell *sh_data, char **av)
 	sh_data->input = NULL;
 
 	m = 0;
-	while (envir[m])
+	while (environ[m])
 	{
 		 m++;
 	}
@@ -42,9 +42,9 @@ void dt_set(dt_shell *sh_data, char **av)
 	sh_data->_envir = malloc(sizeof(char *) * (m + 1));
 
 	m = 0;
-	while (envir[m])
+	while (environ[m])
 	{
-		sh_data->_envir[m] = _strdup(envir[m]);
+		sh_data->_envir[m] = _strdup(environ[m]);
 		m++;
 	}
 
