@@ -3,7 +3,6 @@
 
 
 
-
 char *info_copy(char *name, char *value)
 {
   int l_val, l_name, ln;
@@ -60,7 +59,7 @@ int _st_env(dt_shell *sh_data)
 {
   if (sh_data->args[1] == NULL || sh_data->args[2] == NULL)
     {
-      get_error(sh_data, -1);
+      err_get(sh_data, -1);
       return (1);
 
     }
@@ -79,7 +78,7 @@ int _unst_env(dt_shell *sh_data)
 
   if (sh_data->args[1] == NULL)
     {
-    get_error(sh_data, -1);
+    err_get(sh_data, -1);
   return (1);
     }
   c = -1;
@@ -102,7 +101,7 @@ int _unst_env(dt_shell *sh_data)
     }
   if (c == -1)
     {
-      get_error(sh_data, -1);
+      err_get(sh_data, -1);
       return (1);
 
     }

@@ -13,5 +13,5 @@ int line_ex(dt_shell *sh_data)
   {
 		return (inbuilt(sh_data));
   }
-	return (cmd_exec(sh_data));
+	return (exe_cmd(sh_data));
 }

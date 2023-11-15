@@ -1,6 +1,10 @@
 #include "shell.h"
 
 
+
+
+
+
 char *char_swp(char *in, int bool)
 {
 	int m;
@@ -138,8 +142,8 @@ int cmd_split(dt_shell *sh_data, char *in)
 	while (list_l != NULL)
 	{
 		sh_data->in = list_l->line;
-		sh_data->args = split_line(sh_data->in);
-		loop = exec_line(sh_data);
+		sh_data->args = line_split(sh_data->in);
+		loop = line_ex(sh_data);
 		free(sh_data->args);
 
 		if (loop == 0)

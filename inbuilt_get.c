@@ -1,21 +1,22 @@
 #include "shell.h"
 
 
+
 int (*inbuilt_get(char *cmd))(dt_shell *sh_data)
 {
 	inbuilt_t inbuilt[] = 
 	{
-		{ "env", _env },
+		{ "env", _envir },
 
 		{ "exit", shell_exit },
 
-		{ "setenv", _setenv },
+		{ "setenv", _st_env },
 
-		{ "unsetenv", _unsetenv },
+		{ "unsetenv", _unst_env },
 
 		{ "cd", sh_cmd },
 
-		{ "help", get_help },
+		{ "help", hlp_get },
 
 		{ NULL, NULL }
 	};

@@ -112,7 +112,7 @@ char *not_found_err(dt_shell *sh_data)
 }
 
 /**
- * sh_exit_err - shows the error message in the exit function for exit_shell
+ * sh_exit_err - shows the error message in the exit function for shell_exit
  * @sh_data: shows arguments and counters that are relevant to the data
  * * Return: shows any relevant error message
  */

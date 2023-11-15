@@ -1,8 +1,8 @@
 #include "shell.h"
 
 
-int err_get(dt_shell *sh_data, int val_err)
 
+int err_get(dt_shell *sh_data, int val_err)
 {
 char *err;
 err = NULL;  

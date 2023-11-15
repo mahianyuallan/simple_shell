@@ -1,8 +1,6 @@
 #include "shell.h"
 
 
-
-
 void env_chp(l_var **h, char *in, dt_shell *data)
 {
 	int rw,val; 
@@ -149,7 +147,7 @@ char *input_rep(l_var **h, char *input, char *new_input, int len_b)
 }
 
 
-char *rep_var(char *input, dt_shell *sh_data)
+char *var_replace(char *input, dt_shell *sh_data)
 {
 	l_var *h;
 	l_var *mark;

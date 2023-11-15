@@ -112,7 +112,7 @@ void loop_shl(dt_shell *sh_data);
 void env_chp(l_var **h, char *in, dt_shell *data);
 int var_chp(l_var **h, char *in, char *st, dt_shell *data);
 char *input_rep(l_var **h, char *input, char *new_input, int len_b);
-char *rep_var(char *input, dt_shell *sh_data);
+char *var_replace(char *input, dt_shell *sh_data);
 
 
 /*  shell_ext.c  */
@@ -138,5 +138,104 @@ void env_chk(l_var **h, char *in, dt_shell *data);
 int var_chk(l_var **h, char *in, char *st, dt_shell *data);
 char *input_rep(l_var **head, char *in, char *new_input, int nlen);
 char *var_rep(char *input, dt_shell *sh_data);
+
+/*  aerror1.c */
+
+char *catstr_cd(dt_shell *sh_data, char *msg, char *error, char *ver_str);
+char *get_cmd_err(dt_shell *sh_data);
+char *not_found_err(dt_shell *sh_data);
+char *sh_exit_err(dt_shell *sh_data);
+
+/* aerror2.c */
+char *get_alias_err(char **args);
+char *envir_err(dt_shell *sh_data);
+char *synt_err(char **args);
+char *prms_err(char **args);
+char *path_126_err(dt_shell *sh_data);
+
+
+/* ahelp.c */
+void envir_help_ax(void);
+void envirset_help_ax(void);
+void envirunset_help_ax(void);
+void gen_help_ax(void);
+void exit_help_ax(void);
+
+
+/* ahelp2.c */
+
+void help_ax(void);
+void alias_help_ax(void);
+void cmd_help_ax(void);
+
+/* alist.c */
+list_sep *separ_add_node(list_sep **head, char separ);
+void separ_free_list(list_sep **head);
+list_line *line_add_node(list_line **head, char *line);
+void free_list_line(list_line **head);
+
+/* alist2.c */
+l_var *var_add_nd(l_var **head, int lvar, char *var, int lval);
+void var_free_list(l_var **head);
+
+ ////////////
+
+/* amem.c */
+void _memcpy(void *newptr, const void *ptr, unsigned int size);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+char **_reallocdp(char **ptr, unsigned int old_size, unsigned int new_size);
+
+ 
+/* aux_str  */
+char *_strcat(char *dest, const char *src);
+char *_strcpy(char *dest, char *src);
+int _strcmp(char *s1, char *s2);
+char *_strchr(char *s, char c);
+int _strspn(char *s, char *accept);
+
+
+/* aux_str2.c */
+char *_strdup(const char *s);
+int _strlen(const char *s);
+int cmp_chars(char str[], const char *delim);
+char *_strtok(char str[], const char *delim);
+int _isdigit(const char *s);
+
+/* aux_str3.c */
+void rev_string(char *s);
+
+
+////////////
+
+/* astdlib.c */
+int length_get(int i);
+char *str_int_ax(int i);
+int str_int(char *c);
+
+
+/* cd.c */
+void par_cmd(dt_shell *sh_data);
+void usr_cmd(dt_shell *sh_data);
+void prev_cmd(dt_shell *sh_data);
+void source_cmd(dt_shell *sh_data);
+
+/* cdintoshell.c */
+int sh_cmd(dt_shell *sh_data);
+
+
+/* test_syntax.c */
+int char_rep(char *in, int m);
+int synt_op_err(char *in, int m, char last);
+int char_first(char *in, int *m);
+void synt_print_err(dt_shell *sh_data, char *in, int m, int bool);
+int synt_check_err(dt_shell *sh_data, char *in);
+
+/* execute_cmd.c */
+int current_dir(char *path, int *m);
+char *_loc(char *cmd, char **_envir);
+int is_exe(dt_shell *sh_data);
+int cmd_check_err(char *dir, dt_shell *sh_data);
+int exe_cmd(dt_shell *sh_data);
+
 
 #endif

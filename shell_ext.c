@@ -21,7 +21,7 @@ int shell_exit(dt_shell *sh_data)
 
 		if (!digit || len_str > 10 || large_val)
 		{
-			get_error(sh_data, 2);
+			err_get(sh_data, 2);
 
 			sh_data->status = 2;
 

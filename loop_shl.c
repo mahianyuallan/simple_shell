@@ -1,6 +1,7 @@
 #include "shell.h"
 
 
+
 char *comment_none(char *val)
 {
 	int m, to;
@@ -47,7 +48,7 @@ void loop_shl(dt_shell *sh_data)
 	{
 		write(STDIN_FILENO, "#cisfun$ ", 9);
 
-		in = read_line(&num);
+		in = line_rd(&num);
 
 		if (num != -1)
 		{
@@ -61,9 +62,9 @@ void loop_shl(dt_shell *sh_data)
 				free(in);
 				continue;
 			}
-			in = rep_var(in, sh_data);
+			in = var_replace(in, sh_data);
 
-			lp = split_commands(sh_data, in);
+			lp = cmd_split(sh_data, in);
 
 			sh_data->counter += 1;
 

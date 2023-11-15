@@ -1,5 +1,9 @@
 #include "shell.h"
 
+
+
+
+
 void env_chk(l_var **h, char *in, dt_shell *data)
 {
 	int column, str, m, last_val;

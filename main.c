@@ -59,11 +59,11 @@ int main(int ac, char **av)
 
 	(void) ac;
 
-	signal(SIGINT, get_sigint);
+	signal(SIGINT, sign_get);
 
 	dt_set(&sh_data, av);
 
-	shell_loop(&sh_data);
+	loop_shl(&sh_data);
 
 	dt_free(&sh_data);
 
