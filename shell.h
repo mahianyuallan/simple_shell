@@ -22,7 +22,12 @@
 
 extern char **environ;
 
-
+/**
+ * struct list_line_s - Structure for a linked list node holding a line.
+ *
+ * @line: Pointer to a string representing a line.
+ * @next: Pointer to the next node in the linked list.
+ */
 
 typedef struct list_line_s
 {
@@ -30,24 +35,46 @@ typedef struct list_line_s
 	struct list_line_s *next;
 } list_line;
 
-
+/**
+ * struct dt - Structure to represent shell data.
+ *
+ * @args: Array of strings representing command arguments.
+ * @status: Integer representing the shell status.
+ * @counter: Integer representing the command counter.
+ * @_envir: Array of strings representing the environment variables.
+ * @pid: String representing the process ID.
+ * @av: Array of strings representing command arguments.
+ * @input: String representing user input.
+ */
 typedef struct dt
 {
-    char **args;
+	char **args;
 	int status;
 	int counter;
 	char **_envir;
 	char *pid;
-    char **av;
+	char **av;
 	char *input;
 } dt_shell;
 
+/**
+ * struct inbuilt_s - Structure to represent built-in commands.
+ *
+ * @name: String representing the name of the built-in command.
+ * @f: Function pointer to the corresponding function for the command.
+ */
 typedef struct inbuilt_s
 {
 	char *name;
 	int (*f)(dt_shell *dtsh);
 } inbuilt_t;
 
+/**
+ * struct list_sep_s - Structure for a linked list node holding a separator.
+ *
+ * @separator: Character representing the separator.
+ * @next: Pointer to the next node in the linked list.
+ */
 
 typedef struct list_sep_s
 {
@@ -57,7 +84,14 @@ typedef struct list_sep_s
 
 
 
-
+/**
+ * struct list_l_var - Structure for a linked list node holding a variable.
+ *
+ * @len_var: Length of the variable name.
+ * @val: Pointer to a string representing the variable value.
+ * @len_val: Length of the variable value.
+ * @next: Pointer to the next node in the linked list.
+ */
 
 typedef struct list_l_var
 {
@@ -182,7 +216,9 @@ void free_list_line(list_line **head);
 l_var *var_add_nd(l_var **head, int lvar, char *var, int lval);
 void var_free_list(l_var **head);
 
- ////////////
+
+
+
 
 /* amem.c */
 void _memcpy(void *newptr, const void *ptr, unsigned int size);
@@ -209,7 +245,6 @@ int _isdigit(const char *s);
 void rev_string(char *s);
 
 
-////////////
 
 /* astdlib.c */
 int length_get(int i);

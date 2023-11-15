@@ -1,11 +1,17 @@
 #include "shell.h"
 
+/**
+ * inbuilt_get - Retrieve function pointer for a given built-in command.
+ *
+ * *
+ * @cmd: The command string to be checked.
+ *
+ * Return: A function pointer to the built-in command, or NULL if not found.
+ */
 
-
-int (*inbuilt_get(char *cmd))(dt_shell *sh_data)
+int (* inbuilt_get(char *cmd))(dt_shell *sh_data)
 {
-	inbuilt_t inbuilt[] = 
-	{
+	inbuilt_t inbuilt[] = {
 		{ "env", _envir },
 
 		{ "exit", shell_exit },
@@ -21,8 +27,8 @@ int (*inbuilt_get(char *cmd))(dt_shell *sh_data)
 		{ NULL, NULL }
 	};
 
-	
 	int m;
+
 	m = 0;
 
 	while (inbuilt[m].name)
@@ -34,8 +40,6 @@ int (*inbuilt_get(char *cmd))(dt_shell *sh_data)
 		}
 		m++;
 	}
-
-     
 
 	return (inbuilt[m].f);
 }

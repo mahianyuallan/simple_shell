@@ -1,7 +1,14 @@
 #include "shell.h"
 
 
-
+/**
+ * char_swp - Swap logical operators in a string.
+ *
+ * @in: Pointer to the input string.
+ * @bool: Integer indicating whether to swap or reverse swap.
+ *
+ * Return: A pointer to the modified input string.
+ */
 
 
 
@@ -13,30 +20,22 @@ char *char_swp(char *in, int bool)
 	{
 		m = 0;
 
-		while ( in[m])
+		while (in[m])
 		{
 			if (in[m] == '|')
 			{
 				if (in[m + 1] != '|')
-				{
 					in[m] = 16;
-				}
 				else
-				{
 					m++;
-			    }
 			}
 
 			if (in[m] == '&')
 			{
 				if (in[m + 1] != '&')
-				{
 					in[m] = 12;
-				}
 				else
-				{
 					m++;
-				}
 			}
 			m++;
 		}
@@ -54,6 +53,18 @@ char *char_swp(char *in, int bool)
 	return (in);
 }
 
+
+/**
+ * new_nodes - Create linked list nodes for separators and lines.
+ *
+ * This function analyzes the input string, identifies separators (';', '|', '&'),
+ * creates nodes for the separator linked list, and extracts and creates nodes for
+ * the line linked list. It uses the char_swp function to handle logical operator swaps.
+ *
+ * @head_s: Pointer to the head of the separator linked list.
+ * @head_l: Pointer to the head of the line linked list.
+ * @in: Pointer to the input string.
+ */
 
 void new_nodes(list_sep **head_s, list_line **head_l, char *in)
 {
@@ -88,7 +99,13 @@ void new_nodes(list_sep **head_s, list_line **head_l, char *in)
 
 }
 
-
+/**
+ * forward - Move forward through separator and line linked lists.
+ *
+ * @list_s: Pointer to the head of the separator linked list.
+ * @list_l: Pointer to the head of the line linked list.
+ * @sh_data: Pointer to the dt_shell structure containing shell data.
+ */
 void forward(list_sep **list_s, list_line **list_l, dt_shell *sh_data)
 {
 	int loop_sep;
@@ -123,7 +140,17 @@ void forward(list_sep **list_s, list_line **list_l, dt_shell *sh_data)
 	*list_l = ls_l;
 }
 
-
+/**
+ * cmd_split - Split and execute commands based on separators.
+ *
+ * This function parses the input string, separates it into commands, and
+ * executes each command sequentially based on the specified separators.
+ *
+ * @sh_data: Pointer to the dt_shell structure containing shell data.
+ * @in: Pointer to the input string.
+ *
+ * Return: 0 if the loop is terminated, 1 otherwise.
+ */
 int cmd_split(dt_shell *sh_data, char *in)
 {
 
@@ -163,7 +190,16 @@ int cmd_split(dt_shell *sh_data, char *in)
 	return (1);
 }
 
-
+/**
+ * line_split - Split a string into tokens using delimiters.
+ *
+ * This function splits a string into tokens using specified delimiters and
+ * returns an array of strings representing the tokens.
+ *
+ * @in: Pointer to the input string.
+ *
+ * Return: Array of strings representing the tokens.
+ */
 char **line_split(char *in)
 {
 	size_t size_bit; 

@@ -44,7 +44,7 @@ char *_strcpy(char *dest, char *src)
 }
 /**
  * _strcmp - it is used to compare two strings.
- * @s1: first str 
+ * @s1: first str
  * @s2: second str
  * Return: Always (0).
  */

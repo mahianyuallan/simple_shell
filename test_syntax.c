@@ -72,7 +72,7 @@ int synt_op_err(char *in, int m, char last)
  * char_first - finds index of the first char
  *
  * @in: in string
- * @i: index
+ * @m: index
  * Return: 1 if there is an error. 0 in other case.
  */
 int char_first(char *in, int *m)

@@ -12,7 +12,7 @@
 
 char *catstr_cd(dt_shell *sh_data, char *msg, char *error, char *ver_str)
 {
-	
+
 	char *illegal_flag;
 
 	_strcpy(error, sh_data->av[0]);
@@ -100,7 +100,7 @@ char *not_found_err(dt_shell *sh_data)
 		free(ver_str);
 		return (NULL);
 	}
-	_strcpy(error,sh_data->av[0]);
+	_strcpy(error, sh_data->av[0]);
 	_strcat(error, ": ");
 	_strcat(error, ver_str);
 	_strcat(error, ": ");

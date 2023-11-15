@@ -4,7 +4,7 @@
  * separ_add_node - inputs a separator and it is found at the end of the line
  * of list_sep.
  * @head: this is the head of the list.
- * @sep: contains the seperators (; | &).
+ * @separ: contains the seperators (; | &).
  * Return: it returns the main address of the head.
  */
 list_sep *separ_add_node(list_sep **head, char separ)

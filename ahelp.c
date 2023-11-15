@@ -64,9 +64,16 @@ void gen_help_ax(void)
 	help = "unsetenv [variable]\n";
 	write(STDOUT_FILENO, help, _strlen(help));
 }
+
 /**
- * exit_aux_help - helps exit the env
- * Return: null
+ * exit_help_ax - Display help information for the 'exit' command.
+ *
+ * This function provides a brief description and usage information
+ * for the 'exit' command in the shell. It explains how to use the
+ * command and its optional argument 'n' for specifying an exit status.
+ * If 'n' is omitted, the exit status is that of the last command executed.
+ *
+ * Return: This function does not return a value.
  */
 void exit_help_ax(void)
 {

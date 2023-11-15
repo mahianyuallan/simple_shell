@@ -2,7 +2,7 @@
 
 /**
  * length_get - function used to get the length of the number.
- * @n: give int number.
+ * @i: give int number.
  * Return: length in the number of characters of a number.
  */
 int length_get(int i)
@@ -29,7 +29,7 @@ int length_get(int i)
 }
 /**
  * str_int_ax - function that does the conversion of int to a string.
- * @n: give int number
+ * @i: give int number
  * Return: the string.
  */
 char *str_int_ax(int i)
@@ -67,7 +67,7 @@ char *str_int_ax(int i)
 
 /**
  * str_int - used for the conversion of a string into an integer.
- * @s: it is used to input a string.
+ * @c: it is used to input a string.
  * Return: integer.
  */
 int str_int(char *c)

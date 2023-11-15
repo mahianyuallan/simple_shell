@@ -1,5 +1,12 @@
 #include "shell.h"
 
+/**
+ * shell_exit - Handle the exit built-in command.
+ *
+ * @sh_data: Pointer to the dt_shell structure containing shell data.
+ *
+ * Return: 1 if there was an error, 0 otherwise.
+ */
 
 int shell_exit(dt_shell *sh_data)
 {
@@ -10,7 +17,7 @@ int shell_exit(dt_shell *sh_data)
 
 	if (sh_data->args[1] != NULL)
 	{
-		
+
 		stat = str_int(sh_data->args[1]);
 
 		digit = _isdigit(sh_data->args[1]);
