@@ -117,11 +117,7 @@ void loop_shl(dt_shell *sh_data);
 
 
 
-/*  replace_var.c  */
-void env_chp(l_var **h, char *in, dt_shell *data);
-int var_chp(l_var **h, char *in, char *st, dt_shell *data);
-char *input_rep(l_var **h, char *input, char *new_input, int len_b);
-char *var_replace(char *input, dt_shell *sh_data);
+
 
 
 /*  shell_ext.c  */
