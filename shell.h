@@ -53,7 +53,7 @@ typedef struct dt
 {
     char **args;
 	int status;
-	int counter
+	int counter;
 	char **_envir;
 	char *pid;
     char **av;
