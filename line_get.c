@@ -95,13 +95,10 @@ ssize_t line_get(char **l_ptr, size_t *n, FILE *stream)
 		buff_size[in] = t;
 	}
 	buff_size[in] = '\0';
-
 	set_line(l_ptr, n, buff_size, in);
 
 	val = in;
 	if (m != 0)
-	{
 		in = 0;
-	}
 	return (val);
 }

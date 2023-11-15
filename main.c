@@ -26,7 +26,8 @@ void dt_free(dt_shell *sh_data)
 }
 
 /**
- * dt_set - Initialize dt_shell structure with provided arguments and environment.
+ * dt_set - Initialize dt_shell structure
+ * with provided arguments and environment.
  *
  * @sh_data: Pointer to the dt_shell structure.
  * @av: Pointer to the command-line arguments array.
@@ -44,7 +45,6 @@ void dt_set(dt_shell *sh_data, char **av)
 	sh_data->counter = 1;
 
 	sh_data->input = NULL;
-
 	m = 0;
 	while (environ[m])
 	{

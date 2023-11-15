@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * execute_command - Execute a command based on user input.
+ * line_ex - Execute a command based on user input.
  *
  * @sh_data: Pointer to the dt_shell structure containing shell data.
  *
