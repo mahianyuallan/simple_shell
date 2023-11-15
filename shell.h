@@ -142,7 +142,7 @@ char **line_split(char *in);
 void env_chk(l_var **h, char *in, dt_shell *data);
 int var_chk(l_var **h, char *in, char *st, dt_shell *data);
 char *input_rep(l_var **head, char *in, char *new_input, int nlen);
-char *var_rep(char *input, dt_shell *sh_data);
+char *var_replace(char *input, dt_shell *sh_data);
 
 /*  aerror1.c */
 
