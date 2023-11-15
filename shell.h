@@ -49,7 +49,7 @@ typedef struct list_sep_s
 
 
 
-typedef struct dt
+typedef struct dt_shell
 {
     char **args;
 	int status;
