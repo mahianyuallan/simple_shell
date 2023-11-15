@@ -32,13 +32,22 @@ typedef struct list_line_s
 } list_line;
 
 
+typedef struct dt
+{
+    char **args;
+	int status;
+	int counter;
+	char **_envir;
+	char *pid;
+    char **av;
+	char *input;
+} dt_shell;
 
 typedef struct inbuilt_s
 {
 	char *name;
 	int (*f)(dt_shell *dtsh);
 } inbuilt_t;
-
 
 
 typedef struct list_sep_s
@@ -49,16 +58,7 @@ typedef struct list_sep_s
 
 
 
-typedef struct dt_shell
-{
-    char **args;
-	int status;
-	int counter;
-	char **_envir;
-	char *pid;
-    char **av;
-	char *input;
-} dt_shell;
+
 
 typedef struct list_l_var
 {
