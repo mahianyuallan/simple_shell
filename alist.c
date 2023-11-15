@@ -63,7 +63,7 @@ void separ_free_list(list_sep **head)
  * Return: it returns the main address of the head.
  */
 
-list_line *line_add_node(list_line **head, char *line);
+list_line *line_add_node(list_line **head, char *line)
 {
 	list_line *new, *temp;
 

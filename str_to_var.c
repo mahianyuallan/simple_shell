@@ -98,7 +98,7 @@ char *input_rep(l_var **head, char *in, char *new_input, int nlen)
 while (a < nlen) {
     if (in[m] == '$') {
         if (!(index->len_var) && !(index->len_val)) {
-            new_input[a] = input[m];
+            new_input[a] = in[m];
             m++;
         } else if (index->len_var && !(index->len_val)) {
             for ( n = 0; n < index->len_var; n++)

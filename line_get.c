@@ -6,9 +6,9 @@ void set_line(char **l_ptr, size_t *n, char *buff_size, size_t m)
 
 	if (*l_ptr == NULL)
 	{
-		if  (j > BUFF)
+		if  (m > BUFF)
 		{
-			*n = j;
+			*n = m;
 		}
 		else
 		{
@@ -16,11 +16,11 @@ void set_line(char **l_ptr, size_t *n, char *buff_size, size_t m)
 		}
 		*l_ptr = buff_size;
 	}
-	else if (*n < j)
+	else if (*n < m)
 	{
-		if (j > BUFF)
+		if (m > BUFF)
 		{
-			*n = j;
+			*n = m;
 		}
 		else
 		{

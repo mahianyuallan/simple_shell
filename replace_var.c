@@ -41,7 +41,7 @@ void env_chp(l_var **h, char *in, dt_shell *data)
 	{
 		if (in[n] == ' ' || in[n] == '\t' || in[n] == ';' || in[n] == '\n')
 		{
-			breap;
+			break;
 		}
 	n++;
 	}
