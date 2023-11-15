@@ -1,41 +1,41 @@
 #include "main.h"
 
 /**
- * get_len - function used to get the length of the number.
+ * length_get - function used to get the length of the number.
  * @n: give int number.
  * Return: length in the number of characters of a number.
  */
-int get_len(int n)
+int length_get(int i)
 {
-	unsigned int n1;
+	unsigned int i1;
 	int lenght = 1;
 
-	if (n < 0)
+	if (i < 0)
 	{
 		lenght++;
-		n1 = n * -1;
+		i1 = i * -1;
 	}
 	else
 	{
-		n1 = n;
+		i1 = i;
 	}
-	while (n1 > 9)
+	while (i1 > 9)
 	{
 		lenght++;
-		n1 = n1 / 10;
+		i1 = i1 / 10;
 	}
 
 	return (lenght);
 }
 /**
- * aux_itoa - function that does the conversion of int to a string.
+ * str_int_ax - function that does the conversion of int to a string.
  * @n: give int number
  * Return: the string.
  */
-char *aux_itoa(int n)
+char *str_int_ax(int i)
 {
-	unsigned int n1;
-	int lenght = get_len(n);
+	unsigned int i1;
+	int lenght = length_get(n);
 	char *buffer;
 
 	buffer = malloc(sizeof(char) * (lenght + 1));
@@ -44,45 +44,45 @@ char *aux_itoa(int n)
 
 	*(buffer + lenght) = '\0';
 
-	if (n < 0)
+	if (i < 0)
 	{
-		n1 = n * -1;
+		i1 = i * -1;
 		buffer[0] = '-';
 	}
 	else
 	{
-		n1 = n;
+		i1 = i;
 	}
 
 	lenght--;
 	do {
-		*(buffer + lenght) = (n1 % 10) + '0';
-		n1 = n1 / 10;
+		*(buffer + lenght) = (i1 % 10) + '0';
+		i1 = i1 / 10;
 		lenght--;
 	}
-	while (n1 > 0)
+	while (i1 > 0)
 		;
 	return (buffer);
 }
 
 /**
- * _atoi - used for the conversion of a string into an integer.
+ * str_int - used for the conversion of a string into an integer.
  * @s: it is used to input a string.
  * Return: integer.
  */
-int _atoi(char *s)
+int str_int(char *c)
 {
 	unsigned int count = 0, size = 0, oi = 0, pn = 1, m = 1, i;
 
-	while (*(s + count) != '\0')
+	while (*(c + count) != '\0')
 	{
-		if (size > 0 && (*(s + count) < '0' || *(s + count) > '9'))
+		if (size > 0 && (*(c + count) < '0' || *(c + count) > '9'))
 			break;
 
-		if (*(s + count) == '-')
+		if (*(c + count) == '-')
 			pn *= -1;
 
-		if ((*(s + count) >= '0') && (*(s + count) <= '9'))
+		if ((*(c + count) >= '0') && (*(c + count) <= '9'))
 		{
 			if (size > 0)
 				m *= 10;
@@ -93,7 +93,7 @@ int _atoi(char *s)
 
 	for (i = count - size; i < count; i++)
 	{
-		oi = oi + ((*(s + i) - 48) * m);
+		oi = oi + ((*(c + i) - 48) * m);
 		m /= 10;
 	}
 	return (oi * pn);

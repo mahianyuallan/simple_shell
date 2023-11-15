@@ -11,7 +11,7 @@ int shell_exit(dt_shell *sh_data)
 	if (sh_data->args[1] != NULL)
 	{
 		
-		stat = _atoi(sh_data->args[1]);
+		stat = str_int(sh_data->args[1]);
 
 		digit = _isdigit(sh_data->args[1]);
 

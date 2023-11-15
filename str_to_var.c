@@ -126,7 +126,7 @@ char *var_rep(char *input, dt_shell *sh_data)
 	char *status, *new_input;
 	int olen, nlen;
 
-	status = aux_itoa(sh_data->status);
+	status = str_int_ax(sh_data->status);
 	head = NULL;
 
 	olen = var_chk(&head, input, status, sh_data);

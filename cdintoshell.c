@@ -1,17 +1,17 @@
-#include "main.h"
+#include "shell.h"
 
 /**
- * cd_shell - change directory
+ * sh_cmd - change directory
  *
- * @datash: relevant data
+ * @sh_data: relevant data
  * Return: 1 if successful, 0 if not
  */
-int cd_shell(dt_shell *datash)
+int sh_cmd(dt_shell *sh_data)
 {
 	char *dir;
 	int ishome, ishome2, isddash;
 
-	dir = datash->args[1];
+	dir = sh_data->args[1];
 
 	if (dir != NULL)
 	{
@@ -22,23 +22,23 @@ int cd_shell(dt_shell *datash)
 
 	if (dir == NULL || !ishome || !ishome2 || !isddash)
 	{
-		cd_to_home(datash);
+		source_cmd(sh_data);
 		return (1);
 	}
 
 	if (_strcmp("-", dir) == 0)
 	{
-		cd_previous(datash);
+		prev_cmd(sh_data);
 		return (1);
 	}
 
 	if (_strcmp(".", dir) == 0 || _strcmp("..", dir) == 0)
 	{
-		cd_dot(datash);
+		par_cmd(sh_data);
 		return (1);
 	}
 
-	cd_to(datash);
+	usr_cmd(sh_data);
 
 	return (1);
 }

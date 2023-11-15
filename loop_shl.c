@@ -55,7 +55,7 @@ void loop_shl(dt_shell *sh_data)
 			if (in == NULL)
 				continue;
 
-			if (check_syntax_error(sh_data, in) == 1)
+			if (synt_check_err(sh_data, in) == 1)
 			{
 				sh_data->status = 2;
 				free(in);

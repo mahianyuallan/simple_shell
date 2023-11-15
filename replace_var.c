@@ -157,7 +157,7 @@ char *rep_var(char *input, dt_shell *sh_data)
 	char *new_input;
 	int len_a, len_b;
 
-	stat = aux_itoa(sh_data->status);
+	stat = str_int_ax(sh_data->status);
 
 	h = NULL;
 	len_a = var_chp(&h, input, stat, sh_data);

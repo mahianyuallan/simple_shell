@@ -13,7 +13,7 @@ int (*inbuilt_get(char *cmd))(dt_shell *sh_data)
 
 		{ "unsetenv", _unsetenv },
 
-		{ "cd", cd_shell },
+		{ "cd", sh_cmd },
 
 		{ "help", get_help },
 
