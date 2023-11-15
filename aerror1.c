@@ -1,7 +1,8 @@
 #include "shell.h"
 
 /**
- * catstr_cd - this is a function that links the message for the changing directory error
+ * catstr_cd - this is a function that links
+ * the message for the changing directory error
  *
  * @sh_data: it shows only relevant data off of the directory
  * @msg: a message that outputs print

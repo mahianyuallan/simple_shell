@@ -57,9 +57,9 @@ char *char_swp(char *in, int bool)
 /**
  * new_nodes - Create linked list nodes for separators and lines.
  *
- * This function analyzes the input string, identifies separators (';', '|', '&'),
- * creates nodes for the separator linked list, and extracts and creates nodes for
- * the line linked list. It uses the char_swp function to handle logical operator swaps.
+ * This function identifies separators (';', '|', '&'),
+ * creates nodes for the and extracts and creates nodes for
+ * It uses the char_swp function to handle logical operator swaps.
  *
  * @head_s: Pointer to the head of the separator linked list.
  * @head_l: Pointer to the head of the line linked list.
@@ -95,7 +95,7 @@ void new_nodes(list_sep **head_s, list_line **head_l, char *in)
 		strip = char_swp(strip, 1);
 		line_add_node(head_l, strip);
 		strip = _strtok(NULL, ";|&");
-	} 
+	}
 
 }
 
@@ -202,7 +202,7 @@ int cmd_split(dt_shell *sh_data, char *in)
  */
 char **line_split(char *in)
 {
-	size_t size_bit; 
+	size_t size_bit;
 	char *tkn;
 	size_t m;
 	char **tkns;
